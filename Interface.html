@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-	<header>
-	
-	</header>
-	<section>
-		<!-- Rounded switch -->
-		<label class="switch">
-  			<input type="checkbox">
- 		 	<span class="slider round"></span>
-		</label>
-		<!-- Entry field -->
-		<!-- Button with function called replaceVideo(url) -->
-		<!-- replaceVideo should call helper function getUniqueId(url) 
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <section>
+      <!-- Rounded switch -->
+      <div>
+        <p>The extension is now <span id="state">OFF</span></p>
+        <label class="switch">
+          <input type="checkbox" onChange="toggleState()" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <!-- Entry field -->
+      <div>
+        <input type="text" id="link" />
+        <button type="button" onclick="print()">Go!</button>
+      </div>
+      <!-- Button with function called replaceVideo(url) -->
+      <!-- replaceVideo should call helper function getUniqueId(url) 
 		     should return the unique video Id -->
-	</section>
-</body>
+    </section>
+    <script src="/script.js"></script>
+  </body>
 </html>
