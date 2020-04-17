@@ -41,19 +41,26 @@ function replaceVideo() {
   //Get the URL from the link Id
   // goto checkLink
   // goto getUniqueId
+  // reparse HTML (this will be another function)
 }
-
 
 // Helper: checks if the Youtube URL is of Youtube
 function checkLink(URL) {
   const type1 = "https://www.youtube.com/watch?v=";
-  const type2 = "https://youtu.be/"
+  const type2 = "https://youtu.be/";
 
-  // Check for type 1: https://www.youtube.com/watch?v=Gu77Vtja30c
-    // check that the initial substring
-  // Check for type 2: https://youtu.be/Gu77Vtja30c
-  // Check for type 3: https://www.youtube.com/watch?v=FMrqlo_L-gY&feature=emb_rel_pause
+  // I removed the length consts as they were unnecessary
+    
+  // Check for type 1:
+  // check that the initial substring matches
+  // Check for type 2
+  // check that the initial substring matches
 }
 
 // Helper gets the last unique string of a Youtube URL
-function getUniqueId(url) {}
+function getUniqueId(url) {
+  // Extract for type 1: https://www.youtube.com/watch?v=Gu77Vtja30c
+  // Extract for type 2: https://youtu.be/Gu77Vtja30c
+  // Extractfor type 3: https://www.youtube.com/watch?v=FMrqlo_L-gY&feature=emb_rel_pause
+}
+
