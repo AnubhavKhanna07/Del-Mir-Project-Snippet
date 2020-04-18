@@ -22,6 +22,19 @@ wipeContent()
 // 360p = 480x360
 */
 
+//Global constants
+const prefix1 = "https://www.youtube.com/"; //standard
+const prefix2 = "https://youtu.be/"; // after clicking share
+//const prefix3 = "https://www.youtube.com/watch?time_continue=1"; // after clicking YOUTUBE button on an embedded video (e.g. on Discord)
+
+// https://www.youtube.com/watch?v=QxHkLdQy5f0
+// https://youtu.be/QxHkLdQy5f0
+// https://www.youtube.com/watch?time_continue=148&v=_mkiGMtbrPM&feature=emb_logo
+
+// to deal with prefix 3 we should perhaps split by "&v="
+
+const videoIDLength = 11;
+
 // Turns the extension off and on
 function toggleState() {
   var state = document.getElementById("state");
@@ -39,22 +52,29 @@ function print() {
 // Main: actually re-parses the Youtube embed HTML
 function replaceVideo() {
   //Get the URL from the link Id
-  // goto checkLink
-  // goto getUniqueId
-  // reparse HTML (this will be another function)
+  const entryField = document.getElementById("link");
+  const url = entryField.value;
+  // entryField.value = ""; // Can do this after a set amount of delay like 3 or 4 seconds (REMEMBER TO UNCOMMENT)
+  // there actually is a value
+  if (url) {
+    // go to checkLink
+    console.log(checkLink(url));
+    // go to getUniqueId
+    // go to reparseEmbed (doesn't exist yet)
+  }
 }
 
 // Helper: checks if the Youtube URL is of Youtube
-function checkLink(URL) {
-  const type1 = "https://www.youtube.com/watch?v=";
-  const type2 = "https://youtu.be/";
-
-  // I removed the length consts as they were unnecessary
-    
-  // Check for type 1:
-  // check that the initial substring matches
-  // Check for type 2
-  // check that the initial substring matches
+function checkLink(url) {
+  // Check for prefix1 and prefix 2
+  if (
+    url.slice(0, prefix1.length) === prefix1 ||
+    url.slice(0, prefix2.length) === prefix2
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Helper gets the last unique string of a Youtube URL
