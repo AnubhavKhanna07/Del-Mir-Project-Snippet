@@ -56,7 +56,7 @@ function replaceVideo() {
 function checkLink(url) {
   // Check for prefix1 and prefix 2
   if (
-    url.slice(0, prefix1.length) === prefix1 ||
+    url.slice(0, prefix1.length) === prefix1 || 
     url.slice(0, prefix2.length) === prefix2
   ) {
     return true;
