@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <header></header>
@@ -17,12 +18,12 @@
       <!-- Entry field -->
       <div>
         <input type="text" id="link" />
-        <button type="button" onclick="printT()">Go!</button>
+        <button type="button" onclick="replaceVideo()">Go!</button>
       </div>
+      <div id="video">The video will appear here!</div>
       <!-- Button with function called replaceVideo(url) -->
       <!-- replaceVideo should call helper function getUniqueId(url) 
 		     should return the unique video Id -->
     </section>
-    <script src="/script.js"></script>
   </body>
 </html>
