@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+#video {
+  display: none;
+}
+
 .switch {
   position: relative;
   display: inline-block;
