@@ -20,24 +20,10 @@ function toggleState() {
     state.innerText = "ON";
   } else {
     const videoDiv = document.getElementById("video");
-    videoDiv.innherHTML = "The video will appear here!";
+    videoDiv.innerHTML = "The video will appear here!";
     videoDiv.style.display = "none";
     state.innerText = "OFF";
   }
-}
-
-function printT() {
-  //const correct = "_mkiGMtbrPM";
-  const dummy =
-    "https://www.youtube.com/watch?time_continue=148&v=_mkiGMtbrPM&feature=emb_logo";
-
-  // Regex method
-
-  // Find the first set of 11 characters that abide by the following rules:
-  // 1. There is an '=' before it.
-  // 2. There is an '&' after it.
-  const actuallyGoodRx = /(?<==).{11}(?=&)/;
-  console.log(dummy.match(actuallyGoodRx)[0]); // Index used as match() returns an array
 }
 
 // Main: actually re-parses the Youtube embed HTML
@@ -48,10 +34,14 @@ function replaceVideo() {
   // entryField.value = ""; // Can do this after a set amount of delay like 3 or 4 seconds (REMEMBER TO UNCOMMENT)
 
   if (url) {
-    console.log(checkLink(url));
-    const id = getUniqueId(url);
-    reparseEmbed(id);
-    // go to reparseEmbed (doesn't exist yet)
+    const linkIsValid = checkLink(url);
+    if (linkIsValid === true) {
+      const id = getUniqueId(url);
+      reparseEmbed(id);
+    } else {
+      const videoDiv = document.getElementById("video");
+      videoDiv.innerHTML = "This isn't a Youtube video";
+    }
   }
 }
 
@@ -88,7 +78,6 @@ function getUniqueId(url) {
       // 2. There is an '&' after it.
       const regexPatternEmbed = /(?<==).{11}(?=&)/;
       return url.match(regexPatternEmbed)[0];
-      // console.log(url.match(regexPatternEmbed)[0]);
     }
   }
 }
