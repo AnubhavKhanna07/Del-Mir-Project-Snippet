@@ -2,7 +2,7 @@
   "name": "Del-Mir Project 1",
   "version": "1.0",
   "description": "Cinematic Fb",
-  "permissions": ["storage"],
+  "permissions": ["declarativeContent", "storage"],
   "background": {
     "scripts": ["Script.js"],
     "persistent": false
