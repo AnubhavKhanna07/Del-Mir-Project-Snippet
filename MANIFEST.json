@@ -1,6 +1,20 @@
 {
-    "name": "Del-Mir Project 1",
-    "version": "1.0",
-    "description": "Cinematic Fb",
-    "manifest_version": 2
-  }
+  "name": "Del-Mir Project 1",
+  "version": "1.0",
+  "description": "Cinematic Fb",
+  "permissions": ["storage"],
+  "background": {
+    "scripts": ["Script.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "Interface.html",
+    "default_icon": {
+      "128": "images/128.png"
+    }
+  },
+  "icons": {
+    "128": "images/128.png"
+  },
+  "manifest_version": 2
+}
